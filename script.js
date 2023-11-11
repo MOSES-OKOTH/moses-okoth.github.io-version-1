@@ -40,7 +40,7 @@ function checkWidth(){
     }
 }
 
-window.setInterval(checkWidth, 1500);
+checkWidth();
 
 //scroll projects -> next
 let scrollCount = 0;
