@@ -30,16 +30,16 @@ typeWriter();
 
 
 //checking width for site compatibility
-function checkWidth(){
-    if(window.innerWidth < 480){
-        let body = document.querySelector('body');
-        body.innerHTML = "";
-        window.alert("This site is optimized for desktop view! Kindly rotate your device to get the best experience.\nSorry for any inconveniences caused.");
-        // window.location.reload();
-    }
-}
+// function checkWidth(){
+//     if(window.innerWidth < 480){
+//         let body = document.querySelector('body');
+//         body.innerHTML = "";
+//         window.alert("This site is optimized for desktop view! Kindly rotate your device to get the best experience.\nSorry for any inconveniences caused.");
+//         // window.location.reload();
+//     }
+// }
 
-checkWidth();
+// checkWidth();
 
 //scroll projects -> next
 let scrollCount = 0;
