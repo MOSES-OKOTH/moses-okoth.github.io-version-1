@@ -35,7 +35,6 @@ function checkWidth(){
         let body = document.querySelector('body');
         body.innerHTML = "";
         window.alert("This site is optimized for desktop view! Kindly rotate your device to get the best experience.\nSorry for any inconveniences caused.");
-
         // window.location.reload();
     }
 }
