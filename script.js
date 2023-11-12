@@ -15,8 +15,8 @@ year();
 
 //typing effect on the welcome text
 var i = 0;
-var txt = 'Welcome to my portfolio';
-var speed = 60;
+var txt = 'Welcome to my portfolio,';
+var speed = 100;
 
 function typeWriter() {
     if (i < txt.length) {
@@ -29,17 +29,17 @@ function typeWriter() {
 typeWriter();
 
 
-//checking width for site compatibility
-// function checkWidth(){
-//     if(window.innerWidth < 480){
-//         let body = document.querySelector('body');
-//         body.innerHTML = "";
-//         window.alert("This site is optimized for desktop view! Kindly rotate your device to get the best experience.\nSorry for any inconveniences caused.");
-//         // window.location.reload();
-//     }
-// }
 
-// checkWidth();
+function checkWidth(){
+    if(window.innerWidth < 480){
+        let body = document.querySelector('body');
+        // body.innerHTML = "";
+        window.alert("Dear user, \nThe mobile version of the site is under maintanance. Some functionalities are not optimized. \nSorry for any conveniences caused!\n\n\nSigned,\nMoses Okoth.\nWeb Developer & Admin.");
+        // window.location.reload();
+    }
+}
+
+checkWidth();
 
 //scroll projects -> next
 let scrollCount = 0;
@@ -67,4 +67,14 @@ prev.addEventListener('click', ()=>{
         scrollCount--;
     }
 });
+
+window.setInterval(function(){
+    let upBtn = document.getElementById('go-up');
+
+    if(window.scrollY > (0.5*window.innerHeight)){
+        upBtn.style = "display: fixed;";
+    } else{
+        upBtn.style = "display: none;";
+    }
+}, 1000);
 

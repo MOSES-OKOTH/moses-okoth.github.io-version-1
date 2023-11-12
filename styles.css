@@ -1,358 +1,641 @@
-*{
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+@media screen and (min-width: 480px){
+    *{
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    body{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: black;
+        overflow-x: hidden;
+    }
+    
+    .headers{
+        max-height: 12%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1vw;
+    }
+    
+    .headers nav{
+        display: flex;
+        flex-direction: row;
+        gap: 2.5vw;
+    }
+    
+    .headers nav a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.25vw;
+        padding: 4px 12px;
+        border: 2px solid transparent;
+        border-radius: 4px;
+    }
+    
+    .headers nav a:hover{
+        border: 2px solid white;
+        background: rgba(255, 255, 255, .1);
+    }
+
+    #snack{
+        display: none;
+    }
+    
+    .logo p{
+        font-weight: 600;
+        font-size: 1.35vw;
+        color: white;
+    }
+    
+    .logo i{
+        color: lime;
+        font-size: 1.4vw;
+    }
+    
+    .home{
+        position: relative;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1vw;
+        color: white;
+        background-image: url(./bg4.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        /* border: 1px solid rgba(255, 255, 255, .15); */
+        border-radius: 1vw;
+    }
+    
+    
+    .home .contacts-1{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: row;
+        gap: 1vw;
+        width: max-content;
+        padding: 0.5vw;
+        border-radius: 8px;
+    }
+    
+    .home .contacts-1 a{
+        color: white;
+        text-decoration: none;
+        font-size: 1vw;
+    }
+    
+    .home .contacts-1 a:hover{
+        color: limegreen;
+    }
+    
+    .home .contacts-1 i{
+        font-size: 1.6vw;
+    }
+    .home button{
+        background: none;
+        border: 1px solid white;
+        border-radius: 4px;
+        color: white;
+        padding: 2px 8px;
+        font-size: 1.25vw;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    .home button:hover{
+        background: rgba(255, 255, 255, .1);
+    }
+    
+    .home-intro{
+        width: 35%;
+    }
+    
+    .home-intro p{
+        color: rgba(255, 255, 255, .85);
+        font-weight: 300;
+        font-size: 1.3vw;
+    }
+    
+    .home-intro p:last-child{
+        color: rgba(255, 255, 255, .65);
+        font-size: 1.1vw;
+    }
+    
+    .home-intro h2{
+        color: white;
+        font-size: 2vw;
+        font-weight: 500;
+    }
+    
+    .services{
+        padding: 1vw;
+        min-height: 100%;
+        color: white;
+        margin-bottom: 2vh;
+    }
+    
+    .services-intro{
+        width: 45%;
+    }
+    
+    .services h2{
+        font-size: 2vw;
+        font-weight: bolder;
+        color: white;
+    }
+    .services p{
+        font-size: 1.2vw;
+        color: rgba(255, 255, 255, .85);
+    }
+    
+    .services-list{
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 3%;
+        margin-top: 2%;
+    }
+    
+    .services-list div{
+        width: 20%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 1vw;
+        border: 2px solid rgba(128, 0, 128, 0.75);;
+        border-radius: 8px;
+        margin-bottom: 2vh;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    .services-list div i{
+        font-size: 4vw;
+        margin-bottom: 2.5vh;
+        color: rgba(128, 0, 128, 1);
+    }
+    
+    .services-list div h3{
+        font-size: 1.3vw;
+        margin-bottom: 2.5vh;
+    }
+    
+    .services-list div p{
+        font-size: 1vw;
+        color: rgba(255, 255, 255, .65);
+    }
+    
+    .projects-container{
+        position: relative;
+        height: fit-content;
+    }
+    
+    .projects-btn{
+        height: 100%;
+    }
+    
+    
+    .projects{
+        color: white;
+        padding: 2vw;
+        width: 100%;
+        min-height: 100%;
+    }
+    
+    .projects-intro{
+        width: 45%;
+    }
+    
+    .projects-intro h2{
+        font-size: 2vw;
+        font-weight: bolder;
+        color: white;
+    }
+    
+    .projects-intro p{
+        font-size: 1.2vw;
+        color: rgba(255, 255, 255, .85);
+    }
+    
+    .projects-list{
+        position: relative;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        flex-wrap: no-wrap;
+        gap: 3%;
+        margin-top: 5vh;
+    }
+    
+    .projects-list::-webkit-scrollbar{
+        display: none;
+    }
+    
+    
+    .prev, .next{
+        margin: 0 1vw 0 1vw;
+        color: rgba(255, 255, 255, .65);
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .next{
+        position: absolute;
+        right: 3vw;
+    }
+    
+    .prev i, .next i{
+        font-size: 2vw;
+        background: rgba(255, 255, 255, .1);
+        height: 3vw;
+        width: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    
+    .prev:hover, .next:hover{
+        color: white;
+        cursor: pointer;
+    }
+    
+    .projects-list button{
+        border: 2px solid white;
+        background: transparent;
+        color: white;
+        padding: 4px 8px;
+        font-size: 1.2vw;
+        font-weight: 300;
+        cursor: pointer;
+    }
+    
+    .project-item{
+        display: grid;
+        position: relative;
+        min-width: 90%;
+        margin: 5%;
+    }
+    
+    .project-img{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .project-img img{
+        width: 130%;
+        margin: 0px;
+    }
+    
+    .project-desc{
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: 20%;
+        padding: 4vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .project-desc h3{
+        font-size: 2vw;
+        color: rgba(255, 255, 255, 1);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 350;
+    }
+    
+    .project-desc p{
+        font-size: 1.2vw;
+        font-weight: 300;
+    }
+    
+    #footer{
+        color: rgba(255, 255, 255, .85);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 1vh;
+        font-size: 1.1vw;
+    }
+    
+    #go-up{
+        z-index: 2;
+        position: fixed;
+        bottom: 2vh;
+        right: 2vw;
+        color: white;
+        font-size: 1.8vw;
+        height: 3vw;
+        aspect-ratio: 1/1;
+        background: yellowgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        /* animation: bounce 2s linear infinite; */
+        cursor: pointer;
+    }
+    
+    @keyframes bounce {
+        0%{
+            transform: translateY(0vh);
+        } 20%{
+            transform: translateY(0.5vh);
+        } 60%{
+            transform: translateY(-0.5vh);
+        }
+    }
 }
 
-body{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: black;
-    overflow-x: hidden;
-}
+@media screen and (max-width: 480px){
+    *{
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1rem;
+    }
+    
+    body{
+        position: absolute;
+        height: 100%;
+        max-width: 100%;
+        background: black;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 
-.headers{
-    max-height: 12%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1vw;
-}
+    .headers{
+        color: white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 1.5vw;
+        font-weight: bold;
+        background: black;
+        position: sticky;
+        top: 0px;
+    }
 
-.headers nav{
-    display: flex;
-    flex-direction: row;
-    gap: 2.5vw;
-}
+    .logo p{
+        font-size: 1.2rem;
+    }
 
-.headers nav a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.25vw;
-    padding: 4px 12px;
-    border: 2px solid transparent;
-    border-radius: 4px;
-}
+    .logo i{
+        color: lime;
+        font-size: 1.2rem;
+    }
 
-.headers nav a:hover{
-    border: 2px solid white;
-    background: rgba(255, 255, 255, .1);
-}
+    .headers nav{
+        display: none;
+    }
 
-.logo p{
-    font-weight: 600;
-    font-size: 1.35vw;
-    color: white;
-}
+    #snack i{
+        font-size: 1.2rem;
+        margin-right: 4vw;
+    }
 
-.logo i{
-    color: lime;
-    font-size: 1.4vw;
-}
+    .home{
+        padding: 1.5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80%;
+        color: white;
+        background-image: url(./bg4.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 
-.home{
-    position: relative;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1vw;
-    color: white;
-    background-image: url(./bg4.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* border: 1px solid rgba(255, 255, 255, .15); */
-    border-radius: 1vw;
-}
+    .home-intro{
+        color: white;
+        max-width: 90%;
+    }
 
+    .home-intro p{
+        color: rgba(255, 255, 255, .85);
+        margin-top: 0.5vh;
+        margin-bottom: 0.5vh;
+        font-size: 1rem;
+    }
 
-.home .contacts-1{
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-    width: max-content;
-    padding: 0.5vw;
-    border-radius: 8px;
-}
+    .home-intro h2{
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
 
-.home .contacts-1 a{
-    color: white;
-    text-decoration: none;
-    font-size: 1vw;
-}
+    .contacts-1{
+        margin-top: 1vh;
+    }
 
-.home .contacts-1 a:hover{
-    color: limegreen;
-}
+    .contacts-1 a{
+        text-decoration: none;
+        color: white;
+        padding: 0vw;
+    }
 
-.home .contacts-1 i{
-    font-size: 1.6vw;
-}
-.home button{
-    background: none;
-    border: 1px solid white;
-    border-radius: 4px;
-    color: white;
-    padding: 2px 8px;
-    font-size: 1.25vw;
-    cursor: pointer;
-    margin-top: 20px;
-}
+    .home button{
+        margin-top: 1vh;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        padding: 0.6vw 1vw;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
 
-.home button:hover{
-    background: rgba(255, 255, 255, .1);
-}
-
-.home-intro{
-    width: 35%;
-}
-
-.home-intro p{
-    color: rgba(255, 255, 255, .85);
-    font-weight: 300;
-    font-size: 1.3vw;
-}
-
-.home-intro p:last-child{
-    color: rgba(255, 255, 255, .65);
-    font-size: 1.1vw;
-}
-
-.home-intro h2{
-    color: white;
-    font-size: 2vw;
-    font-weight: 500;
-}
-
-.services{
-    padding: 1vw;
-    min-height: 100%;
-    color: white;
-    margin-bottom: 2vh;
-}
-
-.services-intro{
-    width: 45%;
-}
-
-.services h2{
-    font-size: 2vw;
-    font-weight: bolder;
-    color: white;
-}
-.services p{
-    font-size: 1.2vw;
-    color: rgba(255, 255, 255, .85);
-}
-
-.services-list{
-    flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 3%;
-    margin-top: 2%;
-}
-
-.services-list div{
-    width: 20%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 1vw;
-    border: 2px solid rgba(128, 0, 128, 0.75);;
-    border-radius: 8px;
-    margin-bottom: 2vh;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.services-list div i{
-    font-size: 4vw;
-    margin-bottom: 2.5vh;
-    color: rgba(128, 0, 128, 1);
-}
-
-.services-list div h3{
-    font-size: 1.3vw;
-    margin-bottom: 2.5vh;
-}
-
-.services-list div p{
-    font-size: 1vw;
-    color: rgba(255, 255, 255, .65);
-}
-
-.projects-container{
-    position: relative;
-    height: fit-content;
-}
-
-.projects-btn{
-    height: 100%;
-}
+    .contacts-1 i{
+        font-size: 1.2rem;
+        margin-right: 2vw;
+    }
 
 
-.projects{
-    color: white;
-    padding: 2vw;
-    width: 100%;
-    min-height: 100%;
-}
+    .services{
+        padding: 1.5vw;
+        color: white;
+        max-width: 100%;
+    }
 
-.projects-intro{
-    width: 45%;
-}
+    .services-intro{
+        width: 90%;
+    }
 
-.projects-intro h2{
-    font-size: 2vw;
-    font-weight: bolder;
-    color: white;
-}
+    .services-intro h2{
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: white;
+    }
 
-.projects-intro p{
-    font-size: 1.2vw;
-    color: rgba(255, 255, 255, .85);
-}
+    .services-intro p{
+        color: rgba(255, 255, 255, .85);
+        font-size: 1rem;
+    }
 
-.projects-list{
-    position: relative;
-    overflow-x: scroll;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0;
-    flex-wrap: no-wrap;
-    gap: 3%;
-    margin-top: 5vh;
-}
+    .services-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        flex-grow: 0;
+        justify-content: space-evenly;
+        gap: 1vh;
+        margin-top: 2vh;
+        max-width: 100%;
+    }
 
-.projects-list::-webkit-scrollbar{
-    display: none;
-}
+    .services-list div{
+        margin-bottom: 2vh;
+        border: 2px solid rgba(128, 0, 128, 0.75);
+        padding: 0.8vh;
+        border-radius: 4px;
+        width: 44%;
+        text-align: center;
+    }
 
+    .services-list div i{
+        display: none;
+        font-size: 3.5rem;
+        color: limegreen;
+        margin-bottom: 1vh;
+    }
 
-.prev, .next{
-    margin: 0 1vw 0 1vw;
-    color: rgba(255, 255, 255, .65);
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    .services-list div h3{
+        font-weight: bold;
+        font-size: 1.15rem;
+        margin-bottom: 1.5vh;
+    }
 
-.next{
-    position: absolute;
-    right: 3vw;
-}
+    .services-list div p{
+        color: rgba(255, 255, 255, .85);
+        font-size: 1rem;
+        font-weight: 300;
+    }
 
-.prev i, .next i{
-    font-size: 2vw;
-    background: rgba(255, 255, 255, .1);
-    height: 3vw;
-    width: 3vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
+    
+    .projects{
+        color: white;
+        padding: 1.5vw;
+        border-top: 2px solid yellow;
+    }
 
-.prev:hover, .next:hover{
-    color: white;
-    cursor: pointer;
-}
+    .projects-intro{
+        color: white;
+        width: 85%;
+    }
 
-.projects-list button{
-    border: 2px solid white;
-    background: transparent;
-    color: white;
-    padding: 4px 8px;
-    font-size: 1.2vw;
-    font-weight: 300;
-    cursor: pointer;
-}
+    .projects-intro h2{
+        font-weight: 350;
+        font-size: 1.25rem;
+    }
 
-.project-item{
-    display: grid;
-    position: relative;
-    min-width: 90%;
-    margin: 5%;
-}
+    .projects-intro p{
+        color: rgba(255, 255, 255, .85);
+        font-size: 1rem;
+    }
 
-.project-img{
-    grid-column: 1;
-    grid-row: 1;
-}
+    .projects-btn{
+        display: none;
+    }
 
-.project-img img{
-    width: 130%;
-    margin: 0px;
-}
+    .projects-container{
+        height: max-content;
+    }
 
-.project-desc{
-    grid-column: 2;
-    grid-row: 1;
-    margin-left: 20%;
-    padding: 4vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    .projects-list{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1vh;
+    }
 
-.project-desc h3{
-    font-size: 2vw;
-    color: rgba(255, 255, 255, 1);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 350;
-}
+    .project-item{
+        width: 97%;
+        padding: 1vw;
+    }
 
-.project-desc p{
-    font-size: 1.2vw;
-    font-weight: 300;
-}
+    .project-item:last-child{
+        margin-bottom: 5vh;
+        padding: 0px 0px 1vh 0px;
+        border-bottom: 2px solid yellow;
+    }
 
-#footer{
-    color: rgba(255, 255, 255, .85);
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 1vh;
-    font-size: 1.1vw;
-}
+    .project-item button{
+        margin-top: 1.5vh;
+        font-size: 0.8rem;
+        color: white;
+        background: none;
+        border: 2px solid white;
+        border-radius: 2px;
+        padding: 0.6vw 1vw;
+        margin-right: 1vw;
+    }
 
-#go-up{
-    z-index: 2;
-    position: fixed;
-    bottom: 2vh;
-    right: 2vw;
-    color: white;
-    font-size: 1.8vw;
-    height: 3vw;
-    aspect-ratio: 1/1;
-    background: yellowgreen;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    /* animation: bounce 2s linear infinite; */
-    cursor: pointer;
-}
+    .project-desc h3{
+        font-size: 1.2rem;
+        font-weight: 350;
+        color: white;
+    }
 
-@keyframes bounce {
-    0%{
-        transform: translateY(0vh);
-    } 20%{
-        transform: translateY(0.5vh);
-    } 60%{
-        transform: translateY(-0.5vh);
+    .project-desc p{
+        color: rgba(255, 255, 255, .85);
+        font-size: 1rem;
+    }
+        
+    .project-img img{
+        width: 98%;
+    }
+
+    #footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #footer p{
+        color: rgba(255, 255, 255, .85);
+        font-size: 0.8rem;
+    }
+
+    #footer span{
+        font-size: 0.8rem;
+    }
+
+    #go-up{
+        position: fixed;
+        padding: 1.5vw;
+        color: white;
+        bottom: 1rem;
+        right: 1rem;
+        height: 1.6rem;
+        width: 1.6rem;
+        background: green;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #go-up i{
+        color: white;
+        font-size: 1.5rem;
     }
 }
